@@ -81,15 +81,15 @@ end function;
 
 function Proj( _n, _R, _m )
 // Input:	A positive integer n, a local ring R and its maximal ideal m
-// Output:	P^n(R)
+// Output:	P^n(_R)
     local Rstar, prev, Paff, Pinf;
-    Rstar := { _x : _x in R | not(_x in _m) };
+    Rstar := { _x : _x in _R | not(_x in _m) };
     if  _n eq 0 then
-   	 return { [R!1] };
+   	 return { [_R!1] };
     else
    	 prev := Proj( _n - 1, _R, _m );
-   	 Paff := { _y cat [1] : _y in AutoProd( R, _n ) };
-   	 Pinf := { _y cat [_g] : _y in prev, _g in m };
+   	 Paff := { _y cat [1] : _y in AutoProd( _R, _n ) };
+   	 Pinf := { _y cat [_g] : _y in prev, _g in _m };
    	 return Paff join Pinf;
    end if;
 end function;
