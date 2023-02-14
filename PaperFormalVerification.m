@@ -167,10 +167,7 @@ S := Sum(Sum(P,P2,[A,B]),P3,[A,B]);
 T := Sum(P,Sum(P2,P3,[A,B]),[A,B]);
 I := ideal< Rab | [p^3] cat Minors( Matrix(Rab, [S,T]), 2) >;
 
-54*Y^3*B*(B-2*X^3)^4*p^2 in I;
-54*Y^3*(96*A*X^10-3*B^4+26*B^3*X^3-92*B^2*X^6+248*B*X^9)*p^2 in I;
-
-Factorization( Evaluate(96*A*X^10-3*B^4+26*B^3*X^3-92*B^2*X^6+248*B*X^9,[X,Y,p,A,2*X^3]) );
+2*(4*A^3 + 27*B^2)^2*p^2*Y^3 in I;
 
 
 // Lemma 8.2	
